@@ -1,0 +1,164 @@
+.section.contact {
+  padding-top: 5rem;
+  padding-bottom: 3.25rem;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(14, 16, 15, 0.95), rgba(14, 16, 15, 0.8)),
+    url("/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.contact-title {
+  max-width: 14ch;
+  margin: 0 auto 1.25rem;
+  font-size: clamp(2rem, 7vw, 4.25rem);
+}
+
+.contact-sub {
+  max-width: 30rem;
+  margin: 0 auto 2.25rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.contact-email-group {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 100%;
+}
+
+/* Transform is animated via GSAP only; CSS transitions box-shadow only */
+.contact .contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  transition: box-shadow 0.25s ease;
+}
+
+.contact .contact-email-btn:hover,
+.contact .contact-email-btn:focus-visible {
+  transform: none;
+  box-shadow: 0 8px 32px rgba(10, 228, 72, 0.45);
+}
+
+.contact-copy-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.contact-copy-btn:hover,
+.contact-copy-btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 6px 24px rgba(10, 228, 72, 0.25);
+}
+
+.contact-copied {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.contact-socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0.25rem 0.4rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--accent);
+}
+
+.contact-arrow {
+  display: inline-block;
+  will-change: transform;
+}
+
+.contact-meta {
+  margin-top: 1.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+@media (min-width: 640px) {
+  .section.contact {
+    padding-top: 6.5rem;
+    padding-bottom: 4.25rem;
+    background-image:
+      linear-gradient(rgba(14, 16, 15, 0.92), rgba(14, 16, 15, 0.6)),
+      url("/banner.jpg");
+  }
+
+  .contact-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact .contact-email-btn,
+  .contact-copy-btn,
+  .contact-link {
+    transition: none;
+  }
+}
